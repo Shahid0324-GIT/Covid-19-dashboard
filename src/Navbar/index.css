@@ -1,0 +1,115 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e1e30;
+  list-style-type: none;
+  margin-top: 0;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.logo-name {
+  font-family: 'Bree Serif';
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #f8fafc;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.india {
+  color: #3b82f6;
+}
+
+.link-item {
+  text-decoration: none;
+}
+
+.menu-large {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding-left: 0;
+}
+
+.to-link {
+  background: transparent;
+  color: #94a3b8;
+  font-family: Roboto;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.to-link:active {
+  color: #f8fafc;
+}
+
+.menu-small {
+  display: none;
+}
+
+.menu-button {
+  background: transparent;
+  border-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media all and (max-width: 576px) {
+  .menu-small {
+    display: block;
+    margin: 0;
+  }
+
+  .menu-large {
+    display: none;
+  }
+
+  .navbar {
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0;
+  }
+}
+
+.toggle-menu {
+  color: white;
+  margin-left: 15px;
+  font-size: 2rem;
+}
+
+.close-icon {
+  color: #f8fafc;
+  font-size: 34px;
+  padding: 5px;
+}
+
+.menu-icon {
+  font-size: 34px;
+  color: #f8fafc;
+}
+
+.mobile-view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: #161625;
+  list-style-type: none;
+}
+
+.close-icon {
+  color: #f8fafc;
+  font-size: 34px;
+  padding: 5px;
+}
