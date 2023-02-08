@@ -32,21 +32,22 @@ class Navbar extends Component {
               COVID19 <span className="india">India</span>
             </li>
           </Link>
+
           <ul className="menu-large">
-            <Link to="/" className="link-item">
-              <li>
+            <li>
+              <Link to="/" className="link-item">
                 <button type="button" className="to-link">
                   Home
                 </button>
-              </li>
-            </Link>
-            <Link to="/about" className="link-item">
-              <li>
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="link-item">
                 <button type="button" className="to-link">
                   About
                 </button>
-              </li>
-            </Link>
+              </Link>
+            </li>
           </ul>
           <div className="menu-small">
             <button

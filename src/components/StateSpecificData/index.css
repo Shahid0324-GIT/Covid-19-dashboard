@@ -1,0 +1,152 @@
+.state-specific-container {
+  background-color: #161625;
+}
+
+.loader {
+}
+
+.state-specific-state-test-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 40px;
+}
+
+.state-specific-state-name {
+  background-color: #0284c716;
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 24px;
+  color: #0ea5e9;
+  padding: 0 20px;
+  text-align: center;
+  border-radius: 35px;
+  display: inline-block;
+}
+
+.last-updated {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #cbd5e1;
+}
+
+.tested {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #94a3b8;
+  text-align: right;
+}
+
+.total-tested {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  /* identical to box height, or 100% */
+  text-align: right;
+  /* Light / blue-gray / 400 */
+  color: #94a3b8;
+}
+
+.state-specific-top-districts-container {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.state-specific-top-districts-heading {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 32px;
+  color: #ff073a;
+}
+
+.state-specific-top-districts-list-container {
+  display: flex;
+  color: #94a3b8;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+
+.list-item-count {
+  font-weight: 700;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.list-item-name {
+  font-size: 18px;
+  margin-right: 25px;
+}
+
+.top-district-bar-char-container {
+  display: flex;
+  justify-content: center;
+  padding-left: 8%;
+  padding-right: 10%;
+  height: 450px;
+}
+
+@media all and (max-width: 576px) {
+  .state-specific-state-test-container {
+    padding-left: 20px;
+    padding-right: 30px;
+  }
+
+  .state-specific-state-name {
+    font-size: 16px;
+    line-height: 0px;
+    border-radius: 15px;
+    padding: 5px 10px;
+  }
+
+  .last-updated {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .tested {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .total-tested {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .state-specific-stats-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .list-item {
+    width: 70%;
+  }
+
+  .list-item-count {
+    align-self: center;
+    margin-right: 10px;
+  }
+
+  .list-item-name {
+    margin-right: 10px;
+    margin-left: 10px;
+    align-self: center;
+  }
+}

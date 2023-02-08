@@ -1,0 +1,78 @@
+.bg-about {
+  background: #161625;
+}
+
+.loader-container {
+  background-color: #161625;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-container {
+  min-height: 90vh;
+  overflow: auto;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: #161625;
+}
+
+.about-head {
+  font-family: Roboto;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 64px;
+  color: #f8fafc;
+}
+
+.about-last-update {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #94a3b8;
+}
+
+.about-vaccine {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  color: #e2e8f0;
+}
+
+.about-question {
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 32px;
+  color: #94a3b8;
+}
+
+.about-answer {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #007bff;
+}
+
+.about-q-and-a {
+  list-style: none;
+  padding: 0;
+}
+
+.about-instruction-container {
+  list-style: disc;
+  color: #fff;
+  padding-left: 10px;
+}
+
+.about-instruction {
+  font-family: Roboto;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 32px;
+  color: #94a3b8;
+}
