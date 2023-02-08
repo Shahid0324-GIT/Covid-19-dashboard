@@ -6,10 +6,8 @@ import {
   Bar,
   XAxis,
   YAxis,
-  Legend,
   Line,
   LabelList,
-  CartesianGrid,
   Tooltip,
   ResponsiveContainer,
 } from 'recharts'
@@ -496,6 +494,8 @@ class StateSpecificData extends Component {
     const {dates} = stateDetails
     const datesArray = Object.keys(dates)
 
+    // const stateTimeLineDetails = []
+
     const stateConfirmedTimeLineDetails = []
     const stateDeceasedTimeLineDetails = []
     const stateRecoveredTimeLineDetails = []
@@ -506,6 +506,14 @@ class StateSpecificData extends Component {
       const {total} = dates[date]
       const {confirmed, deceased, recovered, tested} = total
       const active = confirmed - (recovered + deceased)
+
+      //   stateTimeLineDetails.push({
+      //     date,
+      //     confirmed,
+      //     active,
+      //     recovered,
+      //     tested,
+      //   })
 
       stateConfirmedTimeLineDetails.push({
         date,
@@ -529,12 +537,265 @@ class StateSpecificData extends Component {
       })
     })
 
+    // console.log(stateActiveTimeLineDetails)
+    // console.log(stateConfirmedTimeLineDetails)
+    // console.log(stateDeceasedTimeLineDetails)
+    // console.log(stateRecoveredTimeLineDetails)
+    // console.log(stateTestedTimeLineDetails)
+    // console.log(stateTimeLineDetails)
+
     return (
       <div className="line-charts">
         <h1 className="line-chart-heading">Daily Spread Trends</h1>
-        <div className="confirmed-line-chart-container">
+
+        <div className="line-chart-container confirmed-line-bg">
           <p className="confirmed-text">Confirmed</p>
-          <div classNam
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              width={1430}
+              height={450}
+              data={stateConfirmedTimeLineDetails}
+              margin={{
+                top: 5,
+                left: 20,
+                right: 20,
+                bottom: 10,
+              }}
+            >
+              <XAxis
+                dataKey="date"
+                style={{fontSize: '10px', color: '#FF073A'}}
+                tick={{stroke: '#FF073A'}}
+                interval={10}
+                stroke="#FF073A"
+                tickSize={10}
+              />
+              <YAxis
+                style={{fontSize: '10px'}}
+                type="number"
+                strokeWidth={2}
+                domain={['dataMin-(dataMin+dataMax)/2', 'dataMax']}
+                stroke="#FF073A"
+                tickSize={10}
+                tickFormatter={item => {
+                  if (item > 100000) {
+                    return `${item / 100000}L`
+                  }
+                  if (item > 1000 && item <= 100000) {
+                    return `${(item / 1000).toFixed(2)}K`
+                  }
+                  return item
+                }}
+              />
+              <Tooltip />
+              <Line
+                type="monotone"
+                dataKey="confirmed"
+                stroke="#FF073A"
+                dot={{fill: '#FF073A', strokeWidth: 2}}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+
+        <div className="line-chart-container active-line-bg ">
+          <p className="active-text">Total Active</p>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              width={1430}
+              height={450}
+              data={stateActiveTimeLineDetails}
+              margin={{
+                top: 5,
+                left: 20,
+                right: 20,
+                bottom: 10,
+              }}
+            >
+              <XAxis
+                dataKey="date"
+                style={{fontSize: '10px', color: '#007BFF'}}
+                tick={{stroke: '#007BFF'}}
+                interval={10}
+                stroke="#007BFF"
+                tickSize={10}
+              />
+              <YAxis
+                style={{fontSize: '10px'}}
+                type="number"
+                strokeWidth={2}
+                domain={['dataMin-(dataMin+dataMax)/2', 'dataMax']}
+                stroke="#007BFF"
+                tickSize={10}
+                tickFormatter={item => {
+                  if (item > 100000) {
+                    return `${item / 100000}L`
+                  }
+                  if (item > 1000 && item <= 100000) {
+                    return `${(item / 1000).toFixed(2)}K`
+                  }
+                  return item
+                }}
+              />
+              <Tooltip />
+              <Line
+                type="monotone"
+                dataKey="active"
+                stroke="#007BFF"
+                dot={{fill: '#007BFF', strokeWidth: 2}}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+
+        <div className="line-chart-container recovered-line-bg ">
+          <p className="recovered-text">Recovered</p>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              width={1430}
+              height={450}
+              data={stateRecoveredTimeLineDetails}
+              margin={{
+                top: 5,
+                left: 20,
+                right: 20,
+                bottom: 10,
+              }}
+            >
+              <XAxis
+                dataKey="date"
+                style={{fontSize: '10px', color: '#27A243'}}
+                tick={{stroke: '#27A243'}}
+                interval={10}
+                stroke="#27A243"
+                tickSize={10}
+              />
+              <YAxis
+                style={{fontSize: '10px'}}
+                type="number"
+                strokeWidth={2}
+                domain={['dataMin-(dataMin+dataMax)/2', 'dataMax']}
+                stroke="#27A243"
+                tickSize={10}
+                tickFormatter={item => {
+                  if (item > 100000) {
+                    return `${item / 100000}L`
+                  }
+                  if (item > 1000 && item <= 100000) {
+                    return `${(item / 1000).toFixed(2)}K`
+                  }
+                  return item
+                }}
+              />
+              <Tooltip />
+              <Line
+                type="monotone"
+                dataKey="recovered"
+                stroke="#27A243"
+                dot={{fill: '#27A243', strokeWidth: 2}}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+
+        <div className="line-chart-container deceased-line-bg ">
+          <p className="deceased-text">Deceased</p>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              width={1430}
+              height={450}
+              data={stateDeceasedTimeLineDetails}
+              margin={{
+                top: 5,
+                left: 20,
+                right: 20,
+                bottom: 10,
+              }}
+            >
+              <XAxis
+                dataKey="date"
+                style={{fontSize: '10px', color: '#6C757D'}}
+                tick={{stroke: '#6C757D'}}
+                interval={10}
+                stroke="#6C757D"
+                tickSize={10}
+              />
+              <YAxis
+                style={{fontSize: '10px'}}
+                type="number"
+                strokeWidth={2}
+                domain={['dataMin-(dataMin+dataMax)/2', 'dataMax']}
+                stroke="#6C757D"
+                tickSize={10}
+                tickFormatter={item => {
+                  if (item > 100000) {
+                    return `${item / 100000}L`
+                  }
+                  if (item > 1000 && item <= 100000) {
+                    return `${(item / 1000).toFixed(2)}K`
+                  }
+                  return item
+                }}
+              />
+              <Tooltip />
+              <Line
+                type="monotone"
+                dataKey="deceased"
+                stroke="#6C757D"
+                dot={{fill: '#6C757D', strokeWidth: 2}}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+
+        <div className="line-chart-container tested-line-bg ">
+          <p className="tested-text">Tested</p>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              width={1430}
+              height={450}
+              data={stateTestedTimeLineDetails}
+              margin={{
+                top: 5,
+                left: 20,
+                right: 20,
+                bottom: 10,
+              }}
+            >
+              <XAxis
+                dataKey="date"
+                style={{fontSize: '10px', color: '#9673b9'}}
+                tick={{stroke: '#9673b9'}}
+                interval={10}
+                stroke="#9673b9"
+                tickSize={10}
+              />
+              <YAxis
+                style={{fontSize: '10px'}}
+                type="number"
+                strokeWidth={2}
+                domain={['dataMin-(dataMin+dataMax)/2', 'dataMax']}
+                stroke="#9673b9"
+                tickSize={10}
+                tickFormatter={item => {
+                  if (item > 100000) {
+                    return `${item / 100000}L`
+                  }
+                  if (item > 1000 && item <= 100000) {
+                    return `${(item / 1000).toFixed(2)}K`
+                  }
+                  return item
+                }}
+              />
+              <Tooltip />
+              <Line
+                type="monotone"
+                dataKey="tested"
+                stroke="#9673b9"
+                dot={{fill: '#9673b9', strokeWidth: 2}}
+              />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
       </div>
     )
@@ -565,6 +826,7 @@ class StateSpecificData extends Component {
         {!isLoading && this.renderStatsButtons()}
         {!isLoading && this.renderTopDistricts()}
         {!isLoading && this.renderTopDistrictsBarChart()}
+        {!isLoading && this.renderLineChart()}
         <Footer />
       </div>
     )

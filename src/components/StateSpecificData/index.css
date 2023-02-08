@@ -102,6 +102,89 @@
   height: 450px;
 }
 
+.line-charts {
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.line-chart-heading {
+  font-family: Roboto;
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 42px;
+}
+
+.line-chart-container {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  padding: 0 25px;
+  margin-bottom: 40px;
+}
+
+.confirmed-line-bg {
+  background-color: #ff073a20;
+}
+
+.confirmed-text {
+  color: #ff073a;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 600;
+  align-self: flex-end;
+}
+
+.active-text {
+  color: #007bff;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 600;
+  align-self: flex-end;
+}
+
+.active-line-bg {
+  background-color: #007bff15;
+}
+
+.recovered-text {
+  color: #27a243;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 600;
+  align-self: flex-end;
+}
+
+.recovered-line-bg {
+  background-color: #27a24320;
+}
+
+.deceased-text {
+  color: #6c757d;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 600;
+  align-self: flex-end;
+}
+
+.deceased-line-bg {
+  background-color: #6c757d20;
+}
+
+.tested-text {
+  color: #9673b9;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 600;
+  align-self: flex-end;
+}
+
+.tested-line-bg {
+  background-color: #9673b920;
+}
+
 @media all and (max-width: 576px) {
   .state-specific-state-test-container {
     padding-left: 20px;
